@@ -1,6 +1,6 @@
 {
     "name": "inventory-sdk-js",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Isomorphic JS SDK for the Inventory service",
     "author": "Horia Coman <horia141@gmail.com>",
     "scripts": {
