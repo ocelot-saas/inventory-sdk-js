@@ -143,6 +143,54 @@ export class InventoryService {
             'DELETE', `http://${this._inventoryServiceDomain}/org/menu/items/${itemId}`,
             {'Authorization': `Bearer ${accessToken}`}, (unused) => { return {}; });
     }
+
+    getPlatformsWebsite(accessToken) {
+        return this._fetch(
+            'GET', `http://${this._inventoryServiceDomain}/org/platforms/website`,
+            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsWebsite);
+    }
+
+    updatePlatformsWebsite(accessToken, subdomain) {
+        const platformsWebsiteUpdateRequest = {
+            subdomain: subdomain
+        };
+
+        return this._fetchWithData(
+            'PUT', `http://${this._inventoryServiceDomain}/org/platforms/website`,
+            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsWebsite, platformsWebsiteUpdateRequest);
+    }
+
+    getPlatformsCallcenter(accessToken) {
+        return this._fetch(
+            'GET', `http://${this._inventoryServiceDomain}/org/platforms/callcenter`,
+            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsCallcenter);
+    }
+
+    updatePlatformsCallcenter(accessToken, phoneNumber) {
+        const platformsCallcenterUpdateRequest = {
+            phoneNumber: phoneNumber
+        };
+
+        return this._fetchWithData(
+            'PUT', `http://${this._inventoryServiceDomain}/org/platforms/callcenter`,
+            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsCallcenter, platformsCallcenterUpdateRequest);
+    }
+
+    getPlatformsEmailcenter(accessToken) {
+        return this._fetch(
+            'GET', `http://${this._inventoryServiceDomain}/org/platforms/emailcenter`,
+            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsEmailcenter);
+    }
+
+    updatePlatformsEmailcenter(accessToken, emailName) {
+        const platformsEmailcenterUpdateRequest = {
+            emailName: emailName
+        };
+
+        return this._fetchWithData(
+            'PUT', `http://${this._inventoryServiceDomain}/org/platforms/emailcenter`,
+            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsEmailcenter, platformsEmailcenterUpdateRequest);
+    }    
         
     getWebshopInfo(host) {
         return this._fetch(
