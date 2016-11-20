@@ -1,6 +1,6 @@
 {
   "name": "inventory-sdk-js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Isomorphic JS SDK for the Inventory service",
   "author": "Horia Coman <horia141@gmail.com>",
   "scripts": {
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ocelot-saas/inventory-sdk-js#readme",
   "files": [
     "src",
+    "dist",
     "webpack.config.js"
   ],
   "dependencies": {
