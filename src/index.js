@@ -18,7 +18,7 @@ export class InventoryService {
         const orgCreationRequest = {
             name: name,
             description: description,
-            keywords: [],
+            keywords: keywords,
             address: address,
             openingHours: openingHours,
             imageSet: imageSet
@@ -35,11 +35,11 @@ export class InventoryService {
             {'Authorization': `Bearer ${accessToken}`}, (json) => json.restaurant);
     }
 
-    updateRestaurant(accessToken, name, description, address) {
+    updateRestaurantGeneral(accessToken, name, keywords, description, address) {
         const restaurantUpdateRequest = {
             name: name,
             description: description,
-            keywords: [],
+            keywords: keywords,
             address: address
         };
 
@@ -47,6 +47,26 @@ export class InventoryService {
             'PUT', `http://${this._inventoryServiceDomain}/org/restaurant`,
             {'Authorization': `Bearer ${accessToken}`}, (json) => json.restaurant, restaurantUpdateRequest);
     }
+
+    updateRestaurantOpeningHours(accessToken, openingHours) {
+        const restaurantUpdateRequest = {
+            openingHours: openingHours
+        };
+
+        return this._fetchWithData(
+            'PUT', `http://${this._inventoryServiceDomain}/org/restaurant`,
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.restaurant, restaurantUpdateRequest);
+    }
+
+    updateRestaurantImageSete(accessToken, imageSet) {
+        const restaurantUpdateRequest = {
+            imageSet: imageSet
+        };
+
+        return this._fetchWithData(
+            'PUT', `http://${this._inventoryServiceDomain}/org/restaurant`,
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.restaurant, restaurantUpdateRequest);
+    }    
 
     createMenuSection(accessToken, name, description) {
         const menuSectionCreationRequest = {
