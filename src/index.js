@@ -35,7 +35,7 @@ export class InventoryService {
             {'Authorization': `Bearer ${accessToken}`}, (json) => json.restaurant);
     }
 
-    updateRestaurantGeneral(accessToken, name, keywords, description, address) {
+    updateRestaurantGeneral(accessToken, name, description, keywords, address) {
         const restaurantUpdateRequest = {
             name: name,
             description: description,
