@@ -58,7 +58,7 @@ export class InventoryService {
             {'Authorization': `Bearer ${accessToken}`}, (json) => json.restaurant, restaurantUpdateRequest);
     }
 
-    updateRestaurantImageSete(accessToken, imageSet) {
+    updateRestaurantImageSet(accessToken, imageSet) {
         const restaurantUpdateRequest = {
             imageSet: imageSet
         };
@@ -167,7 +167,7 @@ export class InventoryService {
     getPlatformsWebsite(accessToken) {
         return this._fetch(
             'GET', `http://${this._inventoryServiceDomain}/org/platforms/website`,
-            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsWebsite);
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.platformsWebsite);
     }
 
     updatePlatformsWebsite(accessToken, subdomain) {
@@ -177,13 +177,13 @@ export class InventoryService {
 
         return this._fetchWithData(
             'PUT', `http://${this._inventoryServiceDomain}/org/platforms/website`,
-            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsWebsite, platformsWebsiteUpdateRequest);
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.platformsWebsite, platformsWebsiteUpdateRequest);
     }
 
     getPlatformsCallcenter(accessToken) {
         return this._fetch(
             'GET', `http://${this._inventoryServiceDomain}/org/platforms/callcenter`,
-            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsCallcenter);
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.platformsCallcenter);
     }
 
     updatePlatformsCallcenter(accessToken, phoneNumber) {
@@ -193,13 +193,13 @@ export class InventoryService {
 
         return this._fetchWithData(
             'PUT', `http://${this._inventoryServiceDomain}/org/platforms/callcenter`,
-            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsCallcenter, platformsCallcenterUpdateRequest);
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.platformsCallcenter, platformsCallcenterUpdateRequest);
     }
 
     getPlatformsEmailcenter(accessToken) {
         return this._fetch(
             'GET', `http://${this._inventoryServiceDomain}/org/platforms/emailcenter`,
-            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsEmailcenter);
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.platformsEmailcenter);
     }
 
     updatePlatformsEmailcenter(accessToken, emailName) {
@@ -209,7 +209,7 @@ export class InventoryService {
 
         return this._fetchWithData(
             'PUT', `http://${this._inventoryServiceDomain}/org/platforms/emailcenter`,
-            {'Authorization': `Bearer ${accessToken}`}, (unused) => json.platformsEmailcenter, platformsEmailcenterUpdateRequest);
+            {'Authorization': `Bearer ${accessToken}`}, (json) => json.platformsEmailcenter, platformsEmailcenterUpdateRequest);
     }    
         
     getWebshopInfo(host) {
